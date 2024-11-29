@@ -40,6 +40,23 @@ Untuk mencapai hasil terbaik, saya melatih tiga jenis model. Pertama, model SVD 
 
 # Data Understanding
 
+* User-ID : Id pengguna
+* Age : umur pengguna
+* ISBN : kode unik buku
+* Title : Judul Buku
+* Author : Nama penulis buku
+* Year : Tahun terbit 
+* Publisher  : Nama penerbit. 
+
+Terdapat 3 file dalam dataset:
+* Book, dengan 271379 baris
+* User, dengan 278859 baris
+* Rating, dengan 1149780 baris
+
+Berikut beberapa baris yang kosong:
+* Masing-masing 2 baris pada kolom author dan publisher
+* 110232 baris pada kolom Age
+
 
 # EDA
 
@@ -71,40 +88,40 @@ Untuk mencapai hasil terbaik, saya melatih tiga jenis model. Pertama, model SVD 
 
 
 # Data Cleaning
+Berikut bebrapa teknik pembersihan data:
 
-## Menghapus Duplikat
-
-
-## Menangani Missing Values
+1. Menghapus Duplikat
+2. Menangani Missing Values
 
 * Untuk ratings, kita akan menghapus baris yang memiliki nilai rating kosong
 * Untuk usia pengguna, kita bisa mengisi nilai yang hilang dengan rata-rata usia
 * Untuk Tahun Publikasi Buku, kita akan mengisi nilai yang hilang dengan 0 atau median tahun
 
 
-## Memastikan Format yang Konsisten
+3. Memastikan Format yang Konsisten
 
-Mengonversi rating ke dalam format integer
+* Mengonversi rating ke dalam format integer
+* Mengonversi kolom ISBN dan User-ID menjadi tipe data string untuk konsistensi
 
-
-
-Mengonversi kolom ISBN dan User-ID menjadi tipe data string untuk konsistensi
-
-
-
-## Memastikan Rentang Rating yang Valid (Jika rating berada di luar 0-10, hapus)
-
-
-
-
-
+4. Memastikan Rentang Rating yang Valid (Jika rating berada di luar 0-10, hapus)
 
 
 # Model 1: Sistem Rekomendasi Collaborative Filtering (SVD)
 
 # Preprocessing
+1. Menyiapkan dataset
+* Reader
+Membuat objek pembaca yang menentukan rentang nilai penilaian (rating scale). Dalam hal ini, penilaian berada dalam rentang 0 hingga 10.
 
-* Membagi data menjadi train dan test set
+* Dataset.load_from_df
+Mengonversi DataFrame pandas, yaitu ratings[['User-ID', 'ISBN', 'Rating']], menjadi format dataset yang sesuai dengan Surprise. Kolom yang digunakan:
+
+User-ID: Identitas unik pengguna.
+ISBN: Identitas unik buku.
+Rating: Penilaian yang diberikan pengguna pada buku.
+Fungsi ini menghasilkan dataset yang siap digunakan oleh algoritma Collaborative Filtering di Surprise.
+
+2. Membagi data menjadi train dan test set dengan perbandingan 80:20
 
 
 # Modelling
@@ -127,71 +144,22 @@ Hasil prediksi mencakup estimasi rating yang akan diberikan pengguna pada item y
 # Menghitung akurasi menggunakan RMSE
 Metrik RMSE menghitung rata-rata akar kuadrat dari selisih antara rating aktual dan rating yang diprediksi. Semakin kecil nilai RMSE, semakin baik performa model dalam memprediksi rating yang mendekati nilai sebenarnya. RMSE didefinisikan sebagai:
 
-𝑅
-𝑀
-𝑆
-𝐸
-=
-1
-𝑛
-∑
-𝑖
-=
-1
-𝑛
-(
-𝑦
-𝑖
-−
-𝑦
-^
-𝑖
-)
-2
-RMSE= 
-n
-1
-​
-  
-i=1
-∑
-n
-​
- (y 
-i
-​
- − 
-y
-^
-​
-  
-i
-​
- ) 
-2
- 
-​
- 
-Di mana:
+RMSE adalah metrik yang digunakan untuk mengevaluasi seberapa baik model prediksi. Rumusnya adalah sebagai berikut:
 
-𝑦
-𝑖
-y 
-i
-​
-  adalah rating sebenarnya.
-𝑦
-^
-𝑖
-y
-^
-​
-  
-i
-​
-  adalah rating yang diprediksi.
-𝑛
-n adalah jumlah prediksi.
+$$
+\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|
+$$
+
+di mana $y_i$ adalah nilai aktual dan $\hat{y}_i$ adalah nilai prediksi.
+
+
+RMSE mirip MAE. Formulanya sebagai berikut:
+
+$$
+\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
+$$
+
+
 
 
 # Rekomendasi Berdasarkan Model SVD
@@ -223,12 +191,9 @@ Evaluasi model juga menggunakan metriks MSE dan RMSE.
 ## Rekomendasi
 
 
-
-
-
 # Model 3: SDV Dengan Normalisasi Rating
 
-# Normalization of ratings to a 0-1 scale
+## Normalization of ratings to a 0-1 scale
 
 ratings['Rating']
 Bagian ini mengakses kolom Rating dari dataset ratings, yaitu kolom yang berisi nilai rating asli pengguna terhadap item.
@@ -239,7 +204,8 @@ Fungsi .max() mencari nilai tertinggi dari kolom Rating. Nilai ini digunakan seb
 Jika rating maksimum adalah 10, maka rating 5 akan dinormalisasi menjadi 0.5.
 Jika rating maksimum adalah 5, maka rating 3 akan menjadi 0.6.
 
-# Evaluasi
+## Evaluasi
+Evaluase juga menggunakan RMSE
 
 ## Rekomendasi
 
