@@ -41,7 +41,33 @@ Untuk mencapai hasil terbaik, saya melatih tiga jenis model. Pertama, model SVD 
 # Data Understanding
 
 
+# EDA
 
+## Rating Diistribution
+
+
+
+## Age Distribution
+
+
+
+## Top 10 Most Rated Books
+
+
+
+## Top 10 User Giving Most Ratings
+
+
+
+## Book Publication Trend
+
+
+
+## Correlation Between Rating And User Age
+
+
+
+## Top 10 Publishers Pusblish The Books
 
 
 # Data Cleaning
@@ -72,48 +98,7 @@ Mengonversi kolom ISBN dan User-ID menjadi tipe data string untuk konsistensi
 
 
 
-# EDA
 
-## Rating Diistribution
-
-
-
-## Age Distribution
-
-
-
-## Top 10 Most Rated Books
-
-
-
-## Top 10 User Giving Most Ratings
-
-
-
-## Book Publication Trend
-
-
-
-## Correlation Between Rating And User Age
-
-
-
-## Top 10 Publishers Pusblish The Books
-
-
-
-## Merge ratings and books data based on the common 'ISBN' column
-
-
-
-# Convert 'User-ID' column in both DataFrames to a common type, e.g., string
-merged_data['User-ID'] = merged_data['User-ID'].astype(str)
-users['User-ID'] = users['User-ID'].astype(str)
-
-# Now perform the merge
-merged_data = merged_data.merge(users, on='User-ID', how='left')
-
-print(merged_data.head())'''
 
 # Model 1: Sistem Rekomendasi Collaborative Filtering (SVD)
 
@@ -220,8 +205,6 @@ n adalah jumlah prediksi.
 # Model 2: SDV Dengan Menghapus Rating = 0
 
 # Menghapus rating nol
-
-
 
 * ratings['Rating'] > 0
 Bagian ini memfilter dataset ratings, hanya memilih baris di mana kolom Rating memiliki nilai lebih dari nol. Ini berarti rating negatif atau nol tidak akan dimasukkan ke dalam dataset baru.
