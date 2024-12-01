@@ -61,29 +61,45 @@ The dataset is organized into three interconnected files:
 * Books
 
 Total entries: 271,379
+
 Columns:
+
 ISBN (unique identifier for each book)
+
 Title (book's name)
+
 Author (author's name)
+
 Year (year of publication)
+
 Publisher (publisher's name)
+
 Data tidbit: While the dataset is largely complete, there are two missing entries in both the Author and Publisher columns. The Year column contains no missing values, ensuring clarity for temporal analysis.
 
 * Users
 
 Total entries: 278,859
+
 Columns:
+
 User-ID (unique identifier for each user)
+
 Age (user’s age)
+
 Insights: Over 168,000 users have provided their age, but approximately 110,232 rows are missing this information, presenting challenges for demographic analysis.
 
 * Ratings
 
 Total entries: 1,149,780
+
 Columns:
+
 User-ID
+
 ISBN
+
 Rating (user’s rating for a book)
+
 Highlights: Every row is complete, offering a robust foundation for studying user preferences and trends. 
 
 
