@@ -374,7 +374,7 @@ While precision and recall are both important metrics, they often represent a tr
 
 In this project, the precision was 0.20 across all models, which suggests that only 20% of the recommended books were relevant. However, the recall was quite high at 0.91, indicating that the models successfully included most of the relevant books in the recommendations.
 
-# Conclution
+# Conclusion
 1. Model SDV performs the best in collaborative Book System Recommendation
 2. Here 10 books recommendes by the best model:
 
