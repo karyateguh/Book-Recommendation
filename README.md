@@ -115,6 +115,7 @@ Encoding adjustments have been made (from ISO-8859-1 to UTF-8), ensuring accessi
 While most columns are complete, gaps in the Age field (from the Users dataset) and sparse ratings per user/book pose analytical hurdles. Moreover, the absence of a standardized location field (intentionally removed) may limit geographic insights.
 
 
+The dataset is also can be downloaded from [kaggle](https://www.kaggle.com/datasets/somnambwl/bookcrossing-dataset)
 
 **For further details**, refer to the dataset's original publication:
 
