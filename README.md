@@ -320,148 +320,107 @@ To evaluate the performance of the recommendation models (SVD, SVD++, NMF, and C
 ## 1. Root Mean Square Error (RMSE)
 RMSE is one of the most widely used metrics for evaluating the accuracy of rating predictions. It measures the square root of the average squared differences between predicted ratings and actual ratings. A lower RMSE indicates better predictive accuracy, as it reflects smaller deviations between the predicted and actual ratings.
 
-Formula:
-𝑅
-𝑀
-𝑆
-𝐸
-=
-1
-𝑁
-∑
-𝑖
-=
-1
-𝑁
-(
-𝑟
-𝑢
-𝑖
-−
-𝑟
-^
-𝑢
-𝑖
-)
-2
-RMSE= 
-N
-1
-​
-  
-i=1
-∑
-N
-​
- (r 
-ui
-​
- − 
-r
-^
-  
-ui
-​
- ) 
-2
- 
-​
- 
-Where:
+## Root Mean Squared Error (RMSE)
 
-𝑁
-N is the total number of ratings in the test set.
-𝑟
-𝑢
-𝑖
-r 
-ui
-​
-  is the actual rating given by user 
-𝑢
-u to item 
-𝑖
-i.
-𝑟
-^
-𝑢
-𝑖
-r
-^
-  
-ui
-​
-  is the predicted rating for user 
-𝑢
-u on item 
-𝑖
-i.
+Formula:
+
+$$
+\text{RMSE} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} \left( r_{ui} - \hat{r}_{ui} \right)^2}
+$$
+
+### Explanation:
+
+- \( N \) is the total number of ratings in the **test set**.
+- \( r_{ui} \) is the actual rating given by user \( u \) to item \( i \).
+- \( \hat{r}_{ui} \) is the predicted rating for user \( u \) on item \( i \).
+
+
 The RMSE is useful for quantifying how well the model's predictions match the true ratings. A lower RMSE indicates that the model's predictions are closer to the actual ratings, which implies better accuracy.
 
 
 ## 2. Precision at K (Precision@K)
+
+Precision@K measures the proportion of relevant items among the top \( K \) recommended items. It evaluates how well the model recommends relevant items (e.g., books) to the user. This metric helps determine the quality of the top \( K \) recommendations in terms of relevance.
+
+### Formula:
+
+$$
+\text{Precision@K} = \frac{\text{Number of relevant items in top K}}{K}
+$$
+
+### Explanation:
+
+- **Relevant items**: Items with ratings greater than or equal to a certain threshold (e.g., a rating of 7 or above).
+- \( K \): The number of recommendations. In this case, \( K = 10 \).
+
 Precision at K measures the proportion of relevant items among the top 
 𝐾
 K recommended items. It is used to evaluate how well the model recommends relevant items (books) to the user. This metric helps determine the quality of the top 
 𝐾
 K recommendations in terms of relevance.
 
-Formula:
-Precision@K
-=
-Number of relevant items in top K
-𝐾
-Precision@K= 
-K
-Number of relevant items in top K
-​
- 
-Where:
 
-The relevant items are those with ratings greater than or equal to a certain threshold (e.g., a rating of 7 or above).
-𝐾
-K is the number of recommendations (in this case, 
-𝐾
-=
-10
-K=10).
 In the context of this project, a precision of 0.20 means that only 20% of the top 10 recommended books were relevant to the user. 
 
 
-## 3. Recall at K (Recall@K)
-Recall at K measures the proportion of relevant items that are included in the top 
-𝐾
-K recommended items. It helps evaluate how well the model covers all the relevant items for a user, regardless of whether they appear in the top 
-𝐾
-K recommendations or not.
+## 3. Recall at K (Recall@K) 
 
-Formula:
-Recall@K
-=
-Number of relevant items in top K
-Total number of relevant items
-Recall@K= 
-Total number of relevant items
-Number of relevant items in top K
-​
- 
-Where:
+Recall@K measures the proportion of relevant items that are included in the top \( K \) recommended items. It evaluates how well the model covers all the relevant items for a user, regardless of whether they appear in the top \( K \) recommendations or not.
 
-The relevant items are the items with a rating greater than or equal to the threshold (e.g., 7 or above).
-𝐾
-K is the number of top recommendations.
-The denominator is the total number of relevant items available for the user.
-A recall of 0.91 means that 91% of the relevant books for the user were included in the top 10 recommendations. 
+### Formula:
+
+$$
+\text{Recall@K} = \frac{\text{Number of relevant items in top K}}{\text{Total number of relevant items}}
+$$
+
+### Explanation:
+
+- **Relevant items**: Items with ratings greater than or equal to a certain threshold (e.g., a rating of 7 or above).
+- \( K \): The number of top recommendations.
+- **Total number of relevant items**: The total count of items rated as relevant by the user.
 
 
-## 4. Explanation of Trade-Off Between Precision and Recall
+
+## Explanation of Trade-Off Between Precision and Recall
 While precision and recall are both important metrics, they often represent a trade-off. High precision means that the recommended books are highly relevant, but this can sometimes come at the cost of recall—meaning the model might miss relevant books. On the other hand, high recall means the model includes almost all relevant books in the recommendations, but it may also include less relevant items, lowering precision.
 
 In this project, the precision was 0.20 across all models, which suggests that only 20% of the recommended books were relevant. However, the recall was quite high at 0.91, indicating that the models successfully included most of the relevant books in the recommendations.
 
+# Conclution
+1. Model SDV performs the best in collaborative Book System Recommendation
+2. Here 10 books recommendes by the best model:
+
+| ISBN        | Title                                                | Author           |
+|-------------|------------------------------------------------------|------------------|
+| 1101        | Where the Sidewalk Ends : Poems and Drawings         | Shel Silverstein |
+| 3839        | Harry Potter and the Prisoner of Azkaban (Book 3)    | J. K. Rowling    |
+| 5431        | Harry Potter and the Goblet of Fire (Book 4)         | J. K. Rowling    |
+| 5432        | Harry Potter and the Chamber of Secrets (Book 2)     | J. K. Rowling    |
+| 6908        | All I Need to Know I Learned from My Cat             | Suzy Becker      |
+| 9786        | The Vagina Monologues: The V-Day Edition             | Eve Ensler       |
+| 16191       | Falling Up                                           | Shel Silverstein |
+| 21107       | Harry Potter y el cáliz de fuego                     | J. K. Rowling    |
+| 79373       | Harry Potter and the Chamber of Secrets Postcards    | J. K. Rowling    |
+| 100492      | Die unendliche Geschichte: Von A bis Z               | Michael Ende     |
+
+
 # References:
+Aggarwal, C. C. (2016). Recommender Systems: The Textbook. Springer.
+
+Bishop, C. M. (2006). Pattern Recognition and Machine Learning. Springer.
+
+George, T., & Merugu, S. (2005). A scalable collaborative filtering framework based on co-clustering. Proceedings of the Fifth IEEE International Conference on Data Mining (ICDM’05).
+
+Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep Learning. MIT Press.
+
+Hug, N. (2020). Surprise: A Python Library for Recommender Systems. Retrieved from Surprise Library Documentation.
 
 Koren, Y., Bell, R., & Volinsky, C. (2009). Matrix factorization techniques for recommender systems. Computer, 42(8), 30-37.
-Ricci, F., Rokach, L., & Shapira, B. (2011). Introduction to recommender systems handbook. Springer.
+
 Lee, D. D., & Seung, H. S. (1999). Learning the parts of objects by non-negative matrix factorization. Nature, 401(6755), 788-791.
-George, T., & Merugu, S. (2005). A scalable collaborative filtering framework based on co-clustering. Proceedings of the Fifth IEEE International Conference on Data Mining (ICDM’05).
+
+Ricci, F., Rokach, L., & Shapira, B. (2011). Introduction to recommender systems handbook. In Ricci, F., Rokach, L., & Shapira, B. (Eds.), Recommender Systems Handbook (pp. 1–35). Springer.
+
+Ricci, F., Rokach, L., & Shapira, B. (2015). Recommender Systems Handbook. Springer.
+
+
