@@ -1,23 +1,16 @@
 # Book-Recommendation
 
-Original file is located at
-    https://colab.research.google.com/drive/1KRTgroTtBwX_Vpt8e49886pSHsCI1MxQ
+# Project Domain 
 
-# Project Domain
+What’s happening here?
 
-Books have always been a gateway to new knowledge and self-discovery, and now, thanks to technology, finding the right books has become easier than ever. Book recommendation systems are key to helping readers discover books that match their personal interests, making it easier to navigate the vast world of literature. These systems use smart algorithms to understand what readers like and suggest books they are most likely to enjoy.
+Splitting the data: The dataset is divided into a training set (80%) and a test set (20%).
+random_state: Ensures reproducibility, so results remain consistent across runs.
+Why this step matters:
+This step is critical for evaluating the model’s performance on unseen data. Using a separate test set mimics real-world scenarios where the model must make predictions for unknown interactions. Koren, Bell, and Volinsky (2009) emphasize the importance of train-test splits in preventing overfitting and ensuring that the model generalizes well to new data.
 
-According to a 2021 report by Grand View Research, the market for book recommendation systems has been growing rapidly due to the rising demand for personalized reading experiences. Platforms like Goodreads, Amazon, and Scribd use different methods to recommend books, such as collaborative filtering (based on what other users liked) and content-based filtering (focused on book genres or themes). This personalization not only makes readers happy but also helps boost book sales.
 
-In Indonesia, where promoting literacy is a top priority, these recommendation systems can play a big role in encouraging people to read more. According to a report by the Ministry of Education and Culture in 2023, programs like the Gerakan Literasi Nasional (National Literacy Movement) aim to improve reading habits across the country. However, one of the biggest challenges is that many people in rural areas still struggle with limited access to books. Digital platforms with recommendation systems could help solve this by offering personalized book suggestions tailored to local needs and preferences.
 
-Studies have shown that recommendation systems really do help people read more. A 2022 study in the Journal of Educational Technology found that when book suggestions are personalized, readers, especially younger ones, are more likely to read frequently. By analyzing factors like a reader's favorite genres, past books, and user reviews, these systems can guide them toward books they’ll love.
-
-Popular platforms like Goodreads use a method called collaborative filtering, where they look at what other readers with similar tastes have liked and suggest books based on that. For example, if someone enjoys Atomic Habits by James Clear, the system might recommend books like Deep Work by Cal Newport or Grit by Angela Duckworth. Amazon’s system takes it a step further by combining user data with content-based insights, making recommendations even more accurate and relevant.
-
-Although these systems have made discovering books easier, they still face some challenges. One issue is bias in the algorithms, which can sometimes lead to repetitive recommendations. Another problem is that niche books, especially from underrepresented authors, don’t always get the attention they deserve. To improve this, it’s important to diversify the data these systems use and create more inclusive models. Additionally, local platforms, especially in countries like Indonesia, could do a better job by offering recommendations that include books in regional languages or from local authors.
-
-In the end, book recommendation systems are changing the way we discover and enjoy books, offering personalized experiences that encourage us to read more. With ongoing improvements in artificial intelligence and machine learning, these systems will only get better, helping readers connect with books in deeper, more meaningful ways.
 
 # Business Understanding
 
@@ -38,91 +31,214 @@ Designing a recommendation system is like creating a personal librarian for each
 
 # Data Understanding
 
-* User-ID : Id pengguna
-* Age : umur pengguna
-* ISBN : kode unik buku
-* Title : Judul Buku
-* Author : Nama penulis buku
-* Year : Tahun terbit 
-* Publisher  : Nama penerbit. 
+The Book-Crossing dataset, curated by Cai-Nicolas Ziegler and colleagues, offers a fascinating glimpse into the world of readers, books, and their ratings. It has been widely utilized in research on recommender systems, reflecting its richness and potential for insights. Let’s take a journey through the details of this dataset.
 
-Terdapat 3 file dalam dataset:
-* Book, dengan 271379 baris
-* User, dengan 278859 baris
-* Rating, dengan 1149780 baris
+A Look at the Data
+The dataset is organized into three interconnected files:
 
-Berikut beberapa baris yang kosong:
-* Masing-masing 2 baris pada kolom author dan publisher
-* 110232 baris pada kolom Age
+Books
+
+Total entries: 271,379
+Columns:
+ISBN (unique identifier for each book)
+Title (book's name)
+Author (author's name)
+Year (year of publication)
+Publisher (publisher's name)
+Data tidbit: While the dataset is largely complete, there are two missing entries in both the Author and Publisher columns. The Year column contains no missing values, ensuring clarity for temporal analysis.
+Users
+
+Total entries: 278,859
+Columns:
+User-ID (unique identifier for each user)
+Age (user’s age)
+Insights: Over 168,000 users have provided their age, but approximately 110,232 rows are missing this information, presenting challenges for demographic analysis.
+Ratings
+
+Total entries: 1,149,780
+Columns:
+User-ID
+ISBN
+Rating (user’s rating for a book)
+Highlights: Every row is complete, offering a robust foundation for studying user preferences and trends. 
+
+What Makes This Dataset Unique?
+Sparse Participation
+
+Among the 278,859 users, only 99,053 have rated at least one book. The engagement decreases significantly as rating frequency increases:
+43,385 users rated at least 2 books.
+A mere 12,306 users rated 10 or more books.
+Book Ratings
+
+The dataset contains 271,379 books, but only 270,171 have been rated at least once. Delving deeper, the numbers drop:
+124,513 books received at least 2 ratings.
+A modest 17,480 books earned 10 or more ratings.
+These figures reflect the well-known "long tail" phenomenon in book ratings, where a small number of books garner the majority of attention while many remain relatively obscure.
+
+Structural Integrity
+The dataset boasts an impressive level of cleanliness:
+
+Duplicate rows? None. Whether in the Books, Users, or Ratings datasets, every row is unique.
+Encoding adjustments have been made (from ISO-8859-1 to UTF-8), ensuring accessibility and consistency.
+
+
+A Data Detective’s Challenge: Missing and Ambiguous Information
+While most columns are complete, gaps in the Age field (from the Users dataset) and sparse ratings per user/book pose analytical hurdles. Moreover, the absence of a standardized location field (intentionally removed) may limit geographic insights.
+
+
+Exploring the Book-Crossing Dataset: An Engaging Tale of Readers, Books, and Ratings
+The Book-Crossing dataset, curated by Cai-Nicolas Ziegler and colleagues, offers a fascinating glimpse into the world of readers, books, and their ratings. It has been widely utilized in research on recommender systems, reflecting its richness and potential for insights. Let’s take a journey through the details of this dataset.
+
+A Look at the Data
+The dataset is organized into three interconnected files:
+
+Books
+
+Total entries: 271,379
+Columns:
+ISBN (unique identifier for each book)
+Title (book's name)
+Author (author's name)
+Year (year of publication)
+Publisher (publisher's name)
+Data tidbit: While the dataset is largely complete, there are two missing entries in both the Author and Publisher columns. The Year column contains no missing values, ensuring clarity for temporal analysis.
+Users
+
+Total entries: 278,859
+Columns:
+User-ID (unique identifier for each user)
+Age (user’s age)
+Insights: Over 168,000 users have provided their age, but approximately 110,232 rows are missing this information, presenting challenges for demographic analysis.
+Ratings
+
+Total entries: 1,149,780
+Columns:
+User-ID
+ISBN
+Rating (user’s rating for a book)
+Highlights: Every row is complete, offering a robust foundation for studying user preferences and trends.
+What Makes This Dataset Unique?
+Sparse Participation
+
+Among the 278,859 users, only 99,053 have rated at least one book. The engagement decreases significantly as rating frequency increases:
+43,385 users rated at least 2 books.
+A mere 12,306 users rated 10 or more books.
+Book Ratings
+
+The dataset contains 271,379 books, but only 270,171 have been rated at least once. Delving deeper, the numbers drop:
+124,513 books received at least 2 ratings.
+A modest 17,480 books earned 10 or more ratings.
+These figures reflect the well-known "long tail" phenomenon in book ratings, where a small number of books garner the majority of attention while many remain relatively obscure.
+
+Structural Integrity
+The dataset boasts an impressive level of cleanliness:
+
+Duplicate rows? None. Whether in the Books, Users, or Ratings datasets, every row is unique.
+Encoding adjustments have been made (from ISO-8859-1 to UTF-8), ensuring accessibility and consistency.
+A Data Detective’s Challenge: Missing and Ambiguous Information
+While most columns are complete, gaps in the Age field (from the Users dataset) and sparse ratings per user/book pose analytical hurdles. Moreover, the absence of a standardized location field (intentionally removed) may limit geographic insights.
+
+Why It Matters
+The dataset enables research on diverse topics, including personalized recommendations, collaborative filtering, and user profiling. For example:
+
+Recommender Systems: The Ratings file provides a robust foundation for predicting user preferences.
+Demographic Analysis: Although limited by missing age data, the dataset allows exploration of how factors like age influence book preferences.
+
+For further details, refer to the dataset's original publication:
+Cai-Nicolas Ziegler, Sean M. McNee, Joseph A. Konstan, Georg Lausen. Proceedings of the 14th International World Wide Web Conference (WWW '05), May 10-14, 2005, Chiba, Japan.
 
 
 # EDA
 
+## Count unique users and books in the ratings dataset 
+
+Number of unique users: 105283
+Number of unique books: 340556
+
 ## Rating Diistribution
 
-
-
-## Age Distribution
-
+![Distribution of Rating](https://raw.githubusercontent.com/karyateguh/Book-Recommendation/master/image/1.%20Distribution%20of%20Rating.png)
 
 
 ## Top 10 Most Rated Books
 
+![Top 10 Most Rated Books](https://raw.githubusercontent.com/karyateguh/Book-Recommendation/master/image/3.%20Top%2010%20Most%20Rated%20Books.png)
 
 
 ## Top 10 User Giving Most Ratings
 
+![Top 10 User Giving the Most Rating](https://raw.githubusercontent.com/karyateguh/Book-Recommendation/master/image/4.%20Top%2010%20User%20Giving%20the%20most%20rating.png)
 
 
 ## Book Publication Trend
 
+![Book Publication Trend](https://raw.githubusercontent.com/karyateguh/Book-Recommendation/master/image/5.%20Book%20Publication%20Trend.png)
 
-
-## Correlation Between Rating And User Age
 
 
 
 ## Top 10 Publishers Pusblish The Books
-
+![Top 10 Publishers Publish The Books](https://raw.githubusercontent.com/karyateguh/Book-Recommendation/master/image/Top%2010%20Publshers%20Publish%20The%20Books.png)
 
 # Data Cleaning
-Berikut bebrapa teknik pembersihan data:
+Here's a breakdown of the cleaning techniques, explained with care and purpose. 
 
-1. Menghapus Duplikat
-2. Menangani Missing Values
+## 1. Removing Duplicate Entries
 
-* Untuk ratings, kita akan menghapus baris yang memiliki nilai rating kosong
-* Untuk usia pengguna, kita bisa mengisi nilai yang hilang dengan rata-rata usia
-* Untuk Tahun Publikasi Buku, kita akan mengisi nilai yang hilang dengan 0 atau median tahun
+Duplicate entries can distort analysis by over-representing certain data points. For example:
 
+In the Books dataset, duplicates in the ISBN column would imply multiple records for the same book, leading to inconsistencies in matching ratings.
+In the Users dataset, repeated User-ID entries could inflate the number of unique users, skewing demographic analysis.
+In the Ratings dataset, repeated combinations of User-ID and ISBN might suggest duplicate ratings for the same book by the same user, misleading recommendation algorithms.
+Removing duplicates ensures that every book, user, and rating is represented only once, providing a cleaner foundation for analysis. According to data integrity principles, removing duplicates helps maintain the accuracy of insights derived from the data . 
 
-3. Memastikan Format yang Konsisten
+## 2. Ensuring Consistency Between Datasets
 
-* Mengonversi rating ke dalam format integer
-* Mengonversi kolom ISBN dan User-ID menjadi tipe data string untuk konsistensi
+Datasets often reference one another, creating dependencies that must be preserved for reliable analysis. Here:
 
-4. Memastikan Rentang Rating yang Valid (Jika rating berada di luar 0-10, hapus)
+Ratings include both ISBN (to identify books) and User-ID (to identify users).
+By filtering the ratings dataset to include only entries where the ISBN exists in the Books dataset and the User-ID exists in the Users dataset, we ensure that all references in the ratings data are valid.
+For instance, if a rating references a book no longer present in the books dataset, that rating becomes meaningless. Ensuring consistency between datasets is a standard practice to avoid orphan records and maintain relational integrity . 
 
+# 3. Dropping Duplicates Again in Ratings
 
-# Model 1: Sistem Rekomendasi Collaborative Filtering (SVD)
+Although duplicates based on User-ID and ISBN were already addressed, performing a final drop_duplicates operation ensures no stray duplicates exist due to prior operations or merging inconsistencies. This final check ensures a pristine dataset, free of redundancy.
 
 # Preprocessing
-1. Menyiapkan dataset
-* Reader
-Membuat objek pembaca yang menentukan rentang nilai penilaian (rating scale). Dalam hal ini, penilaian berada dalam rentang 0 hingga 10.
 
-* Dataset.load_from_df
-Mengonversi DataFrame pandas, yaitu ratings[['User-ID', 'ISBN', 'Rating']], menjadi format dataset yang sesuai dengan Surprise. Kolom yang digunakan:
+Before building a recommender system, preprocessing ensures that the data is clean, relevant, and ready for modeling. The steps outlined in the provided code take us through filtering interactions and preparing the dataset for a collaborative filtering model using the Surprise library. Let’s unpack each part of the process.
 
-User-ID: Identitas unik pengguna.
-ISBN: Identitas unik buku.
-Rating: Penilaian yang diberikan pengguna pada buku.
-Fungsi ini menghasilkan dataset yang siap digunakan oleh algoritma Collaborative Filtering di Surprise.
+## 1. Filtering Interactions
 
-2. Membagi data menjadi train dan test set dengan perbandingan 80:20
+What’s happening here?
 
+Thresholds are set: Users must have rated at least 5 books (min_user_interactions = 5), and books must have received at least 5 ratings (min_book_interactions = 5).
+Counting interactions:
+user_counts calculates the number of ratings each user has given.
+book_counts calculates the number of ratings each book has received.
+Filtering the dataset: The ratings dataset is filtered to include only users and books meeting the minimum interaction criteria.
+Why this step matters:
+Sparse datasets can negatively affect recommendation models because users with very few interactions provide limited information about their preferences, making it harder for the model to generalize effectively. Similarly, books with minimal ratings do not offer enough data to infer their general appeal. Removing these sparse interactions is a widely accepted best practice in recommender systems, as discussed by Ricci, Rokach, and Shapira (2015) in Recommender Systems Handbook.
 
+## 2. Preparing the Dataset for Surprise
 
+What’s happening here?
+
+Reader object: Defines the rating scale, which in this case ranges from 0 to 10. This ensures the model interprets ratings correctly during training.
+Dataset.load_from_df: Converts the filtered dataset into a format compatible with the Surprise library, which is a popular toolkit for building recommendation algorithms.
+Why this step matters:
+Collaborative filtering algorithms require data in a specific format, typically consisting of user-item-rating triples. Using the Surprise library streamlines the preprocessing phase, ensuring the dataset is ready for further operations like splitting and training. Hug (2020), in the Surprise library documentation, highlights the library's ability to handle sparse datasets and simplify collaborative filtering implementation.
+
+## 3. Split Dataset
+
+What’s happening here?
+
+Splitting the data: The dataset is divided into a training set (80%) and a test set (20%).
+random_state: Ensures reproducibility, so results remain consistent across runs.
+Why this step matters:
+This step is critical for evaluating the model’s performance on unseen data. Using a separate test set mimics real-world scenarios where the model must make predictions for unknown interactions. Koren, Bell, and Volinsky (2009) emphasize the importance of train-test splits in preventing overfitting and ensuring that the model generalizes well to new data.
+
+# Modelling
 
 # 1. SVD (Singular Value Decomposition)
 SVD is a classic and well-regarded model in recommendation systems. Its primary strength lies in its ability to handle sparse datasets, which are common in user-item matrices where most items remain unrated by users. In our evaluation, SVD achieved an RMSE of 3.5311, the lowest among all models, indicating strong accuracy in predicting ratings. It also performed well in recall, scoring 0.91, which means it successfully identified 91% of the relevant books for the user.
