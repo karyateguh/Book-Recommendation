@@ -77,7 +77,7 @@ User-ID (unique identifier for each user)
 Age (user’s age)
 Insights: Over 168,000 users have provided their age, but approximately 110,232 rows are missing this information, presenting challenges for demographic analysis.
 
-*Ratings
+* Ratings
 
 Total entries: 1,149,780
 Columns:
@@ -127,6 +127,7 @@ Cai-Nicolas Ziegler, Sean M. McNee, Joseph A. Konstan, Georg Lausen. Proceedings
 ## Count unique users and books in the ratings dataset 
 
 Number of unique users: 105283
+
 Number of unique books: 340556
 
 ## Rating Diistribution
@@ -184,32 +185,43 @@ Before building a recommender system, preprocessing ensures that the data is cle
 
 ## 1. Filtering Interactions
 
-What’s happening here?
+* What’s happening here?
 
 Thresholds are set: Users must have rated at least 5 books (min_user_interactions = 5), and books must have received at least 5 ratings (min_book_interactions = 5).
+
 Counting interactions:
+
 user_counts calculates the number of ratings each user has given.
+
 book_counts calculates the number of ratings each book has received.
+
 Filtering the dataset: The ratings dataset is filtered to include only users and books meeting the minimum interaction criteria.
-Why this step matters:
+
+* Why this step matters:
 Sparse datasets can negatively affect recommendation models because users with very few interactions provide limited information about their preferences, making it harder for the model to generalize effectively. Similarly, books with minimal ratings do not offer enough data to infer their general appeal. Removing these sparse interactions is a widely accepted best practice in recommender systems, as discussed by Ricci, Rokach, and Shapira (2015) in Recommender Systems Handbook.
 
 ## 2. Preparing the Dataset for Surprise
 
-What’s happening here?
+* What’s happening here?
 
 Reader object: Defines the rating scale, which in this case ranges from 0 to 10. This ensures the model interprets ratings correctly during training.
+
 Dataset.load_from_df: Converts the filtered dataset into a format compatible with the Surprise library, which is a popular toolkit for building recommendation algorithms.
-Why this step matters:
+
+* Why this step matters:
+  
 Collaborative filtering algorithms require data in a specific format, typically consisting of user-item-rating triples. Using the Surprise library streamlines the preprocessing phase, ensuring the dataset is ready for further operations like splitting and training. Hug (2020), in the Surprise library documentation, highlights the library's ability to handle sparse datasets and simplify collaborative filtering implementation.
 
 ## 3. Split Dataset
 
-What’s happening here?
+* What’s happening here?
 
 Splitting the data: The dataset is divided into a training set (80%) and a test set (20%).
+
 random_state: Ensures reproducibility, so results remain consistent across runs.
-Why this step matters:
+
+* Why this step matters:
+
 This step is critical for evaluating the model’s performance on unseen data. Using a separate test set mimics real-world scenarios where the model must make predictions for unknown interactions. Koren, Bell, and Volinsky (2009) emphasize the importance of train-test splits in preventing overfitting and ensuring that the model generalizes well to new data.
 
 # Modelling
