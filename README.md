@@ -105,13 +105,14 @@ These figures reflect the well-known "long tail" phenomenon in book ratings, whe
 
 The dataset boasts an impressive level of cleanliness:
 
-**Duplicate rows?** 
+*Duplicate rows?*
 None. Whether in the Books, Users, or Ratings datasets, every row is unique.
 
-Encoding adjustments have been made (from ISO-8859-1 to UTF-8), ensuring accessibility and consistency.
+*Encoding adjustments have been made (from ISO-8859-1 to UTF-8)*, ensuring accessibility and consistency.
 
 
-**A Data Detective’s Challenge: Missing and Ambiguous Information**
+*A Data Detective’s Challenge: Missing and Ambiguous Information*
+
 While most columns are complete, gaps in the Age field (from the Users dataset) and sparse ratings per user/book pose analytical hurdles. Moreover, the absence of a standardized location field (intentionally removed) may limit geographic insights.
 
 
