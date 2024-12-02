@@ -38,12 +38,12 @@ By bridging the gap between readers and books, this project aspires to transform
 
 Problem Statements:
 
-1. Which models can predict the best?
+1. Which models can predict the best? And Why?
 2. How is ten recommendations from the best model?
 
 Goals:
 
-1. To find out which model can predict the best
+1. To find out which model can predict the best and how is the relevance to the user.  
 2. To find out ten recommendations from the best model.
 
 
