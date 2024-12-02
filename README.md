@@ -473,6 +473,9 @@ In this project, the precision was 0.20 across all models, which suggests that o
 
 
 # References:
+
+
+
 Aggarwal, C. C. (2016). Recommender Systems: The Textbook. Springer.
 
 Bishop, C. M. (2006). Pattern Recognition and Machine Learning. Springer.
