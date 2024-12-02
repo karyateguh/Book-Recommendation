@@ -260,18 +260,18 @@ SVD's performance aligns with findings in literature, where it is often noted fo
 
 * Top 10 Recommendation
 
-| ISBN       | Title                                                 | Author             |
-|------------|-------------------------------------------------------|--------------------|
-| 0060256672 | Where the Sidewalk Ends: Poems and Drawings           | Shel Silverstein   |
-| 0439136350 | Harry Potter and the Prisoner of Azkaban (Book 3)     | J. K. Rowling      |
-| 0439139597 | Harry Potter and the Goblet of Fire (Book 4)          | J. K. Rowling      |
-| 0439064864 | Harry Potter and the Chamber of Secrets (Book 2)      | J. K. Rowling      |
-| 0894808249 | All I Need to Know I Learned from My Cat              | Suzy Becker        |
-| 0375756981 | The Vagina Monologues: The V-Day Edition              | Eve Ensler         |
-| 0060248025 | Falling Up                                            | Shel Silverstein   |
-| 8478886451 | Harry Potter y el cáliz de fuego                      | J. K. Rowling      |
-| 0439425220 | Harry Potter and the Chamber of Secrets Postcards     | J. K. Rowling      |
-| 3522128001 | Die unendliche Geschichte: Von A bis Z                | Michael Ende       |
+| ISBN         | Title                                                          | Author             |
+|--------------|----------------------------------------------------------------|--------------------|
+| 0060256672   | Where the Sidewalk Ends : Poems and Drawings                   | Shel Silverstein   |
+| 0439136350   | Harry Potter and the Prisoner of Azkaban (Book 3)              | J. K. Rowling      |
+| 0439064864   | Harry Potter and the Chamber of Secrets (Book 2)               | J. K. Rowling      |
+| 0894808249   | All I Need to Know I Learned from My Cat                       | Suzy Becker        |
+| 0553274325   | Johnny Got His Gun                                             | Dalton Trumbo      |
+| 0060248025   | Falling Up                                                     | Shel Silverstein   |
+| 8478886451   | Harry Potter y el cáliz de fuego                               | J. K. Rowling      |
+| 0786808551   | The Arctic Incident (Artemis Fowl, Book 2)                    | Eoin Colfer        |
+| 0439425220   | Harry Potter and the Chamber of Secrets Postcard Edition       | J. K. Rowling      |
+| 3522128001   | Die unendliche Geschichte: Von A bis Z                         | Michael Ende       |
 
 
 # 2. SVD++
@@ -288,18 +288,18 @@ Although SVD++ shows promise for datasets with rich implicit feedback, its added
 
 * Top 10 Recommendation
 
-| ISBN       | Title                                                 | Author             |
-|------------|-------------------------------------------------------|--------------------|
-| 0060256672 | Where the Sidewalk Ends: Poems and Drawings           | Shel Silverstein   |
-| 0394758285 | The Big Sleep                                         | Raymond Chandler   |
-| 1400032717 | The Curious Incident of the Dog in the Night-Time     | Mark Haddon        |
-| 0894808249 | All I Need to Know I Learned from My Cat              | Suzy Becker        |
-| 0060248025 | Falling Up                                            | Shel Silverstein   |
-| 0920668364 | Love You Forever                                      | Robert Munsch      |
-| 0836213319 | Dilbert: A Book of Postcards                          | Scott Adams        |
-| 0439425220 | Harry Potter and the Chamber of Secrets Postcards     | J. K. Rowling      |
-| 1577780728 | Jesus Freaks: DC Talk and The Voice of the Martyrs    | DC Talk            |
-| 3522128001 | Die unendliche Geschichte: Von A bis Z                | Michael Ende       |
+| ISBN         | Title                                                          | Author                |
+|--------------|----------------------------------------------------------------|-----------------------|
+| 0060256672   | Where the Sidewalk Ends : Poems and Drawings                   | Shel Silverstein      |
+| 0894808249   | All I Need to Know I Learned from My Cat                       | Suzy Becker           |
+| 0060248025   | Falling Up                                                     | Shel Silverstein      |
+| 0553282182   | Alicia: My Story                                               | Alicia Appleman-Jurman|
+| 0380973642   | Smoke & Mirrors: Short Fictions and Illusions                  | Neil Gaiman           |
+| 0394823370   | The Lorax                                                      | Dr. Seuss             |
+| 0962959170   | The Teenage Liberation Handbook: How to Quit School and Get a Life | Grace Llewellyn    |
+| 0762409533   | TOLKIEN MAGNETIC POSTCARDS(tm) 12 Full-color Magnet Postcards | Brothers Hildebrandt  |
+| 0316578398   | The Art of Raising a Puppy                                     | New Skete Monks       |
+| 3522128001   | Die unendliche Geschichte: Von A bis Z                         | Michael Ende          |
 
 
 
@@ -319,18 +319,18 @@ NMF’s interpretability is valuable, but it is not enough to compensate for its
 
 * Top 10 Recommendation
 
-| ISBN       | Title                                                 | Author                 |
-|------------|-------------------------------------------------------|------------------------|
-| 0195153448 | Classical Mythology                                   | Mark P. O. Morford     |
-| 0002005018 | Clara Callan                                         | Richard Bruce Wright   |
-| 0060973129 | Decision in Normandy                                  | Carlo D'Este           |
-| 0374157065 | Flu: The Story of the Great Influenza Pandemic        | Gina Bari Kolata       |
-| 0393045218 | The Mummies of Urumchi                                | E. J. W. Barber        |
-| 0399135782 | The Kitchen God's Wife                                | Amy Tan                |
-| 0425176428 | What If?: The World's Foremost Military Historians... | Robert Cowley          |
-| 0671870432 | PLEADING GUILTY                                       | Scott Turow            |
-| 0679425608 | Under the Black Flag: The Romance and the Reality...  | David Cordingly        |
-| 074322678X | Where You'll Find Me: And Other Stories               | Ann Beattie            |
+| ISBN         | Title                                                          | Author               |
+|--------------|----------------------------------------------------------------|----------------------|
+| 0195153448   | Classical Mythology                                            | Mark P. O. Morford   |
+| 0002005018   | Clara Callan                                                   | Richard Bruce Wright |
+| 0060973129   | Decision in Normandy                                           | Carlo D'Este         |
+| 0374157065   | Flu: The Story of the Great Influenza Pandemic                 | Gina Bari Kolata     |
+| 0393045218   | The Mummies of Urumchi                                         | E. J. W. Barber      |
+| 0399135782   | The Kitchen God's Wife                                         | Amy Tan              |
+| 0425176428   | What If?: The World's Foremost Military Historians' Answers to Questions about Life | Robert Cowley |
+| 0671870432   | PLEADING GUILTY                                               | Scott Turow           |
+| 0679425608   | Under the Black Flag: The Romance and the Real Story of Pirates | David Cordingly      |
+| 074322678X   | Where You'll Find Me: And Other Stories                        | Ann Beattie          |
 
 
 # 4. CoClustering
@@ -349,18 +349,18 @@ CoClustering is often highlighted in literature for its ability to handle sparse
 
 * Top 10 Recommendation
 
-| ISBN       | Title                                                 | Author                 |
-|------------|-------------------------------------------------------|------------------------|
-| 0195153448 | Classical Mythology                                   | Mark P. O. Morford     |
-| 0002005018 | Clara Callan                                          | Richard Bruce Wright   |
-| 0060973129 | Decision in Normandy                                  | Carlo D'Este           |
-| 0374157065 | Flu: The Story of the Great Influenza Pandemic        | Gina Bari Kolata       |
-| 0393045218 | The Mummies of Urumchi                                | E. J. W. Barber        |
-| 0399135782 | The Kitchen God's Wife                                | Amy Tan                |
-| 0425176428 | What If?: The World's Foremost Military Historians... | Robert Cowley          |
-| 0671870432 | PLEADING GUILTY                                       | Scott Turow            |
-| 0679425608 | Under the Black Flag: The Romance and the Reality...  | David Cordingly        |
-| 074322678X | Where You'll Find Me: And Other Stories               | Ann Beattie            |
+| ISBN         | Title                                                          | Author               |
+|--------------|----------------------------------------------------------------|----------------------|
+| 0195153448   | Classical Mythology                                            | Mark P. O. Morford   |
+| 0002005018   | Clara Callan                                                   | Richard Bruce Wright |
+| 0060973129   | Decision in Normandy                                           | Carlo D'Este         |
+| 0374157065   | Flu: The Story of the Great Influenza Pandemic                 | Gina Bari Kolata     |
+| 0393045218   | The Mummies of Urumchi                                         | E. J. W. Barber      |
+| 0399135782   | The Kitchen God's Wife                                         | Amy Tan              |
+| 0425176428   | What If?: The World's Foremost Military Historians' Answers to Questions about Life | Robert Cowley |
+| 0671870432   | PLEADING GUILTY                                               | Scott Turow           |
+| 0679425608   | Under the Black Flag: The Romance and the Real Story of Pirates | David Cordingly      |
+| 074322678X   | Where You'll Find Me: And Other Stories                        | Ann Beattie          |
 
 
 # Evaluation and Metrics Used in the Book Recommendation System
@@ -458,18 +458,20 @@ In this project, the precision was 0.20 across all models, which suggests that o
 
 2. Here 10 books recommendes by the best model:
 
-| ISBN        | Title                                                | Author           |
-|-------------|------------------------------------------------------|------------------|
-| 1101        | Where the Sidewalk Ends : Poems and Drawings         | Shel Silverstein |
-| 3839        | Harry Potter and the Prisoner of Azkaban (Book 3)    | J. K. Rowling    |
-| 5431        | Harry Potter and the Goblet of Fire (Book 4)         | J. K. Rowling    |
-| 5432        | Harry Potter and the Chamber of Secrets (Book 2)     | J. K. Rowling    |
-| 6908        | All I Need to Know I Learned from My Cat             | Suzy Becker      |
-| 9786        | The Vagina Monologues: The V-Day Edition             | Eve Ensler       |
-| 16191       | Falling Up                                           | Shel Silverstein |
-| 21107       | Harry Potter y el cáliz de fuego                     | J. K. Rowling    |
-| 79373       | Harry Potter and the Chamber of Secrets Postcards    | J. K. Rowling    |
-| 100492      | Die unendliche Geschichte: Von A bis Z               | Michael Ende     |
+| ISBN         | Title                                                          | Author             |
+|--------------|----------------------------------------------------------------|--------------------|
+| 0060256672   | Where the Sidewalk Ends : Poems and Drawings                   | Shel Silverstein   |
+| 0439136350   | Harry Potter and the Prisoner of Azkaban (Book 3)              | J. K. Rowling      |
+| 0439064864   | Harry Potter and the Chamber of Secrets (Book 2)               | J. K. Rowling      |
+| 0894808249   | All I Need to Know I Learned from My Cat                       | Suzy Becker        |
+| 0553274325   | Johnny Got His Gun                                             | Dalton Trumbo      |
+| 0060248025   | Falling Up                                                     | Shel Silverstein   |
+| 8478886451   | Harry Potter y el cáliz de fuego                               | J. K. Rowling      |
+| 0786808551   | The Arctic Incident (Artemis Fowl, Book 2)                    | Eoin Colfer        |
+| 0439425220   | Harry Potter and the Chamber of Secrets Postcard Edition       | J. K. Rowling      |
+| 3522128001   | Die unendliche Geschichte: Von A bis Z                         | Michael Ende       |
+
+
 
 
 # References:
