@@ -258,6 +258,22 @@ Precision was limited at 0.20, meaning only 20% of the recommended books were tr
 Could struggle with incorporating implicit feedback like browsing or clicks.
 SVD's performance aligns with findings in literature, where it is often noted for its scalability and predictive power (Koren et al., 2009).
 
+* Top 10 Recommendation
+
+| ISBN       | Title                                                 | Author             |
+|------------|-------------------------------------------------------|--------------------|
+| 0060256672 | Where the Sidewalk Ends: Poems and Drawings           | Shel Silverstein   |
+| 0439136350 | Harry Potter and the Prisoner of Azkaban (Book 3)     | J. K. Rowling      |
+| 0439139597 | Harry Potter and the Goblet of Fire (Book 4)          | J. K. Rowling      |
+| 0439064864 | Harry Potter and the Chamber of Secrets (Book 2)      | J. K. Rowling      |
+| 0894808249 | All I Need to Know I Learned from My Cat              | Suzy Becker        |
+| 0375756981 | The Vagina Monologues: The V-Day Edition              | Eve Ensler         |
+| 0060248025 | Falling Up                                            | Shel Silverstein   |
+| 8478886451 | Harry Potter y el cáliz de fuego                      | J. K. Rowling      |
+| 0439425220 | Harry Potter and the Chamber of Secrets Postcards     | J. K. Rowling      |
+| 3522128001 | Die unendliche Geschichte: Von A bis Z                | Michael Ende       |
+
+
 # 2. SVD++
 Building on SVD, SVD++ adds implicit feedback into the mix, such as a user’s interactions with items beyond ratings. While theoretically promising, SVD++ shows slightly weaker prediction accuracy. 
 
@@ -269,6 +285,23 @@ Performs well in terms of recall, ensuring that most relevant books are recommen
 Higher computational cost due to its complexity.
 Marginally worse RMSE than SVD, showing a small decline in predictive performance.
 Although SVD++ shows promise for datasets with rich implicit feedback, its added complexity may not justify the performance gains in this case (Koren, 2008).
+
+* Top 10 Recommendation
+
+| ISBN       | Title                                                 | Author             |
+|------------|-------------------------------------------------------|--------------------|
+| 0060256672 | Where the Sidewalk Ends: Poems and Drawings           | Shel Silverstein   |
+| 0394758285 | The Big Sleep                                         | Raymond Chandler   |
+| 1400032717 | The Curious Incident of the Dog in the Night-Time     | Mark Haddon        |
+| 0894808249 | All I Need to Know I Learned from My Cat              | Suzy Becker        |
+| 0060248025 | Falling Up                                            | Shel Silverstein   |
+| 0920668364 | Love You Forever                                      | Robert Munsch      |
+| 0836213319 | Dilbert: A Book of Postcards                          | Scott Adams        |
+| 0439425220 | Harry Potter and the Chamber of Secrets Postcards     | J. K. Rowling      |
+| 1577780728 | Jesus Freaks: DC Talk and The Voice of the Martyrs    | DC Talk            |
+| 3522128001 | Die unendliche Geschichte: Von A bis Z                | Michael Ende       |
+
+
 
 # 3. NMF (Non-Negative Matrix Factorization)
 NMF uses a different mathematical approach by restricting values to be non-negative, which often makes it more interpretable. However, it struggled with the dataset and achieving lower accuracy. While its recall and precision scores matched the other models, NMF did not show any standout strengths in this scenario.
@@ -284,6 +317,22 @@ Poor rating prediction accuracy (highest RMSE).
 Fails to leverage implicit feedback effectively.
 NMF’s interpretability is valuable, but it is not enough to compensate for its weaker predictive performance in this context.
 
+* Top 10 Recommendation
+
+| ISBN       | Title                                                 | Author                 |
+|------------|-------------------------------------------------------|------------------------|
+| 0195153448 | Classical Mythology                                   | Mark P. O. Morford     |
+| 0002005018 | Clara Callan                                         | Richard Bruce Wright   |
+| 0060973129 | Decision in Normandy                                  | Carlo D'Este           |
+| 0374157065 | Flu: The Story of the Great Influenza Pandemic        | Gina Bari Kolata       |
+| 0393045218 | The Mummies of Urumchi                                | E. J. W. Barber        |
+| 0399135782 | The Kitchen God's Wife                                | Amy Tan                |
+| 0425176428 | What If?: The World's Foremost Military Historians... | Robert Cowley          |
+| 0671870432 | PLEADING GUILTY                                       | Scott Turow            |
+| 0679425608 | Under the Black Flag: The Romance and the Reality...  | David Cordingly        |
+| 074322678X | Where You'll Find Me: And Other Stories               | Ann Beattie            |
+
+
 # 4. CoClustering
 CoClustering takes a different approach by grouping users and items into clusters. Surprisingly, it performed well. CoClustering strikes a balance between accuracy and computational efficiency.
 
@@ -297,6 +346,21 @@ Efficient clustering approach, which can handle sparsity well.
 Limited precision, suggesting it struggles to prioritize the most relevant books.
 Can be less flexible than other models when scaling or incorporating side information.
 CoClustering is often highlighted in literature for its ability to handle sparse matrices effectively (George & Merugu, 2005).
+
+* Top 10 Recommendation
+
+| ISBN       | Title                                                 | Author                 |
+|------------|-------------------------------------------------------|------------------------|
+| 0195153448 | Classical Mythology                                   | Mark P. O. Morford     |
+| 0002005018 | Clara Callan                                          | Richard Bruce Wright   |
+| 0060973129 | Decision in Normandy                                  | Carlo D'Este           |
+| 0374157065 | Flu: The Story of the Great Influenza Pandemic        | Gina Bari Kolata       |
+| 0393045218 | The Mummies of Urumchi                                | E. J. W. Barber        |
+| 0399135782 | The Kitchen God's Wife                                | Amy Tan                |
+| 0425176428 | What If?: The World's Foremost Military Historians... | Robert Cowley          |
+| 0671870432 | PLEADING GUILTY                                       | Scott Turow            |
+| 0679425608 | Under the Black Flag: The Romance and the Reality...  | David Cordingly        |
+| 074322678X | Where You'll Find Me: And Other Stories               | Ann Beattie            |
 
 
 # Evaluation and Metrics Used in the Book Recommendation System
@@ -325,11 +389,13 @@ The RMSE is useful for quantifying how well the model's predictions match the tr
 
 ### Results:
 
-Model	RMSE
-SVD	3.5311
-CoClustering	3.5987
-SVD++	3.7281
-NMF	3.9527
+| Model          | RMSE   |
+|----------------|--------|
+| SVD            | 3.5311 |
+| CoClustering   | 3.5987 |
+| SVD++          | 3.7281 |
+| NMF            | 3.9527 |
+
 
 ## 2. Precision at K (Precision@K)
 
@@ -374,11 +440,13 @@ $$
 
 ### Results:
 
-Recall@10:
-SVD: 0.91.
-CoClustering: 0.91.
-SVD++: 0.90.
-NMF: 0.90.
+| Model          | Recall@10 |
+|----------------|-----------|
+| SVD            | 0.91      |
+| CoClustering   | 0.91      |
+| SVD++          | 0.90      |
+| NMF            | 0.90      |
+
 
 ## Explanation of Trade-Off Between Precision and Recall
 While precision and recall are both important metrics, they often represent a trade-off. High precision means that the recommended books are highly relevant, but this can sometimes come at the cost of recall—meaning the model might miss relevant books. On the other hand, high recall means the model includes almost all relevant books in the recommendations, but it may also include less relevant items, lowering precision.
