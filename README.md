@@ -259,9 +259,7 @@ Could struggle with incorporating implicit feedback like browsing or clicks.
 SVD's performance aligns with findings in literature, where it is often noted for its scalability and predictive power (Koren et al., 2009).
 
 # 2. SVD++
-Building on SVD, SVD++ adds implicit feedback into the mix, such as a user’s interactions with items beyond ratings. While theoretically promising, SVD++ had a higher RMSE of 3.7281, which shows slightly weaker prediction accuracy. Its recall dropped marginally to 0.90, and its precision remained the same as SVD at 0.20.
-
-* Strengths:
+Building on SVD, SVD++ adds implicit feedback into the mix, such as a user’s interactions with items beyond ratings. While theoretically promising, SVD++ shows slightly weaker prediction accuracy. 
 
 Captures both explicit ratings and implicit feedback, providing a fuller picture of user preferences.
 Performs well in terms of recall, ensuring that most relevant books are recommended.
@@ -273,7 +271,7 @@ Marginally worse RMSE than SVD, showing a small decline in predictive performanc
 Although SVD++ shows promise for datasets with rich implicit feedback, its added complexity may not justify the performance gains in this case (Koren, 2008).
 
 # 3. NMF (Non-Negative Matrix Factorization)
-NMF uses a different mathematical approach by restricting values to be non-negative, which often makes it more interpretable. However, it struggled with the dataset, achieving the highest RMSE of 3.9527, indicating lower accuracy. While its recall and precision scores matched the other models, NMF did not show any standout strengths in this scenario.
+NMF uses a different mathematical approach by restricting values to be non-negative, which often makes it more interpretable. However, it struggled with the dataset and achieving lower accuracy. While its recall and precision scores matched the other models, NMF did not show any standout strengths in this scenario.
 
 * Strengths:
 
@@ -287,7 +285,7 @@ Fails to leverage implicit feedback effectively.
 NMF’s interpretability is valuable, but it is not enough to compensate for its weaker predictive performance in this context.
 
 # 4. CoClustering
-CoClustering takes a different approach by grouping users and items into clusters. Surprisingly, it performed well, achieving the second-lowest RMSE of 3.5987. Its recall was excellent at 0.91, matching SVD, and its precision was consistent at 0.20. CoClustering strikes a balance between accuracy and computational efficiency.
+CoClustering takes a different approach by grouping users and items into clusters. Surprisingly, it performed well. CoClustering strikes a balance between accuracy and computational efficiency.
 
 * Strengths:
 
