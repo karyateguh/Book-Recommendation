@@ -122,7 +122,7 @@ These figures reflect the well-known "long tail" phenomenon in book ratings, whe
 The dataset boasts an impressive level of cleanliness:
 
 *Duplicate rows?*
-None. Whether in the Books, Users, or Ratings datasets, every row is unique.
+One. Whether in the Books, Users, or Ratings datasets, every row is unique.
 
 *Encoding adjustments have been made (from ISO-8859-1 to UTF-8)*, ensuring accessibility and consistency.
 
