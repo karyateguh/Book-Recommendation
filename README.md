@@ -325,6 +325,13 @@ $$
 
 The RMSE is useful for quantifying how well the model's predictions match the true ratings. A lower RMSE indicates that the model's predictions are closer to the actual ratings, which implies better accuracy.
 
+### Results:
+
+Model	RMSE
+SVD	3.5311
+CoClustering	3.5987
+SVD++	3.7281
+NMF	3.9527
 
 ## 2. Precision at K (Precision@K)
 
@@ -367,7 +374,13 @@ $$
 - \( K \): The number of top recommendations.
 - **Total number of relevant items**: The total count of items rated as relevant by the user.
 
+### Results:
 
+Recall@10:
+SVD: 0.91.
+CoClustering: 0.91.
+SVD++: 0.90.
+NMF: 0.90.
 
 ## Explanation of Trade-Off Between Precision and Recall
 While precision and recall are both important metrics, they often represent a trade-off. High precision means that the recommended books are highly relevant, but this can sometimes come at the cost of recall—meaning the model might miss relevant books. On the other hand, high recall means the model includes almost all relevant books in the recommendations, but it may also include less relevant items, lowering precision.
