@@ -373,6 +373,8 @@ RMSE is one of the most widely used metrics for evaluating the accuracy of ratin
 
 ## Root Mean Squared Error (RMSE) 
 
+## Root Mean Square Error (RMSE)
+
 The formula for RMSE is:
 
 $$
@@ -381,21 +383,10 @@ $$
 
 ### Explanation:
 
-- **\( n \):** Total number of data points.
-- **\( y_i \):** Actual value of the \(i\)-th data point.
-- **\( \hat{y}_i \):** Predicted value of the \(i\)-th data point.
-- **\( \sum \):** Summation, which adds up the squared differences for all data points.
-
-Formula:
-
-$$
-\text{RMSE} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} \left( r_{ui} - \hat{r}_{ui} \right)^2}
-$$
-
-Where:
-- **N** is the total number of ratings in the test set.
-- $$**r_{ui}**$$ is the actual rating given by user **u** to item **i**.
-- $$**\hat{r}_{ui}**$$ is the predicted rating for user **u** on item **i**.
+- n  : Total number of data points used in the calculation.
+- yᵢ : Actual value of the 𝑖-th data point (observed value from the dataset).
+- ŷᵢ : Predicted value of the 𝑖-th data point (model’s output).
+- Σ  : Summation symbol, representing the sum of all values (from 𝑖=1 to 𝑛).
 
 
 The RMSE is useful for quantifying how well the model's predictions match the true ratings. A lower RMSE indicates that the model's predictions are closer to the actual ratings, which implies better accuracy.
