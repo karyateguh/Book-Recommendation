@@ -38,13 +38,14 @@ By bridging the gap between readers and books, this project aspires to transform
 
 Problem Statements:
 
-1. Which models can predict the best? And Why?
-2. How is ten recommendations from the best model?
+1. Which recommendation model offers the most accurate predictions, and why?
+2. How relevant are the top ten recommendations provided by the best-performing model?
 
 Goals:
 
-1. To find out which model can predict the best and how is the relevance to the user.  
-2. To find out ten recommendations from the best model.
+1. To identify the most accurate recommendation model and understand its relevance to users.
+2. To evaluate the top ten recommendations from the best model in terms of user relevance and engagement.
+
 
 
 Solutions
@@ -454,22 +455,14 @@ While precision and recall are both important metrics, they often represent a tr
 In this project, the precision was 0.20 across all models, which suggests that only 20% of the recommended books were relevant. However, the recall was quite high at 0.91, indicating that the models successfully included most of the relevant books in the recommendations.
 
 # Conclusion
-1. Model SDV performs the best in collaborative Book System Recommendation. In our evaluation, SVD achieved an RMSE of 3.5311, the lowest among all models, indicating strong accuracy in predicting ratings. It also performed well in recall, scoring 0.91, which means it successfully identified 91% of the relevant books for the user.
+1. Based on the results, the SVD model delivers the most accurate predictions with the lowest RMSE of 3.5327. This suggests that the SVD model is better at minimizing prediction errors compared to the other models (NMF, CoClustering, and SVD++). While precision and recall are consistent across all models at 0.20 and 0.91 respectively for the top 10 recommendations, RMSE is a crucial indicator of overall prediction accuracy, where the lower value of SVD implies a better performance in terms of predictive accuracy.
 
-2. Here 10 books recommendes by the best model:
+2. The top 10 recommendations from the SVD model demonstrate 0.20 Precision@10 and 0.91 Recall@10. These metrics indicate that, although the relevance of recommendations (precision) is modest, the model is highly effective at recalling a broader range of relevant recommendations (recall). This shows that the SVD model is effective in retrieving relevant recommendations, despite the relatively low precision score. This implies that the SVD model is capable of suggesting a larger set of relevant items, which is valuable for user engagement.
 
-| ISBN         | Title                                                          | Author             |
-|--------------|----------------------------------------------------------------|--------------------|
-| 0060256672   | Where the Sidewalk Ends : Poems and Drawings                   | Shel Silverstein   |
-| 0439136350   | Harry Potter and the Prisoner of Azkaban (Book 3)              | J. K. Rowling      |
-| 0439064864   | Harry Potter and the Chamber of Secrets (Book 2)               | J. K. Rowling      |
-| 0894808249   | All I Need to Know I Learned from My Cat                       | Suzy Becker        |
-| 0553274325   | Johnny Got His Gun                                             | Dalton Trumbo      |
-| 0060248025   | Falling Up                                                     | Shel Silverstein   |
-| 8478886451   | Harry Potter y el cáliz de fuego                               | J. K. Rowling      |
-| 0786808551   | The Arctic Incident (Artemis Fowl, Book 2)                    | Eoin Colfer        |
-| 0439425220   | Harry Potter and the Chamber of Secrets Postcard Edition       | J. K. Rowling      |
-| 3522128001   | Die unendliche Geschichte: Von A bis Z                         | Michael Ende       |
+**Summary of Model Evaluation:**
+SVD stands out as the best-performing model in terms of RMSE, making it the most accurate for predicting user preferences.
+Although all models have the same precision and recall for top 10 recommendations, SVD offers the best combination of accuracy (low RMSE) and relevant recommendations (high recall).
+Thus, the SVD model is the most appropriate choice for the recommendation system, fulfilling the project goals of both predicting accurately and delivering relevant recommendations to users.
 
 
 
