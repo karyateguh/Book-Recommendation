@@ -381,8 +381,8 @@ $$
 
 Where:
 - **N** is the total number of ratings in the test set.
-- **r_{ui}** is the actual rating given by user **u** to item **i**.
-- **\hat{r}_{ui}** is the predicted rating for user **u** on item **i**.
+- $$**r_{ui}**$$ is the actual rating given by user **u** to item **i**.
+- $$**\hat{r}_{ui}**$$ is the predicted rating for user **u** on item **i**.
 
 
 The RMSE is useful for quantifying how well the model's predictions match the true ratings. A lower RMSE indicates that the model's predictions are closer to the actual ratings, which implies better accuracy.
