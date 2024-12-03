@@ -393,12 +393,13 @@ The RMSE is useful for quantifying how well the model's predictions match the tr
 
 ### Results:
 
-| Model          | RMSE   |
-|----------------|--------|
-| SVD            | 3.5311 |
-| CoClustering   | 3.5987 |
-| SVD++          | 3.7281 |
-| NMF            | 3.9527 |
+| Model         | RMSE   |
+|---------------|--------|
+| **NMF**       | 3.9502 |
+| **CoClustering** | 3.5980 |
+| **SVD**       | 3.5327 |
+| **SVD++**     | 3.7248 |
+
 
 
 ## 2. Precision at K (Precision@K)
