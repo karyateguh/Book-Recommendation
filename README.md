@@ -423,6 +423,15 @@ K recommended items. It is used to evaluate how well the model recommends releva
 𝐾
 K recommendations in terms of relevance.
 
+### Result
+
+| Model         | Precision@10 |
+|---------------|-------------|
+| **NMF**       | 0.20        |
+| **CoClustering** | 0.20        |
+| **SVD**       | 0.20        |
+| **SVD++**     | 0.20        |
+
 
 In the context of this project, a precision of 0.20 means that only 20% of the top 10 recommended books were relevant to the user. 
 
