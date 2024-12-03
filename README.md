@@ -371,7 +371,20 @@ To evaluate the performance of the recommendation models (SVD, SVD++, NMF, and C
 ## 1. Root Mean Square Error (RMSE)
 RMSE is one of the most widely used metrics for evaluating the accuracy of rating predictions. It measures the square root of the average squared differences between predicted ratings and actual ratings. A lower RMSE indicates better predictive accuracy, as it reflects smaller deviations between the predicted and actual ratings.
 
-## Root Mean Squared Error (RMSE)
+## Root Mean Squared Error (RMSE) 
+
+The formula for RMSE is:
+
+$$
+\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2}
+$$
+
+### Explanation:
+
+- **\( n \):** Total number of data points.
+- **\( y_i \):** Actual value of the \(i\)-th data point.
+- **\( \hat{y}_i \):** Predicted value of the \(i\)-th data point.
+- **\( \sum \):** Summation, which adds up the squared differences for all data points.
 
 Formula:
 
