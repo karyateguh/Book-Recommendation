@@ -379,11 +379,10 @@ $$
 \text{RMSE} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} \left( r_{ui} - \hat{r}_{ui} \right)^2}
 $$
 
-### Explanation:
-
-- \( N \) is the total number of ratings in the **test set**.
-- \( r_{ui} \) is the actual rating given by user \( u \) to item \( i \).
-- \( \hat{r}_{ui} \) is the predicted rating for user \( u \) on item \( i \).
+Where:
+- **N** is the total number of ratings in the test set.
+- **r_{ui}** is the actual rating given by user **u** to item **i**.
+- **\hat{r}_{ui}** is the predicted rating for user **u** on item **i**.
 
 
 The RMSE is useful for quantifying how well the model's predictions match the true ratings. A lower RMSE indicates that the model's predictions are closer to the actual ratings, which implies better accuracy.
