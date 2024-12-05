@@ -63,7 +63,7 @@ The dataset is organized into three interconnected files:
 
 Total entries: 271,379
 
-Columns:
+Here are the columns Books have:
 
 ISBN (unique identifier for each book)
 
@@ -81,7 +81,7 @@ Data tidbit: While the dataset is largely complete, there are two missing entrie
 
 Total entries: 278,859
 
-Columns:
+Here are the columns Users have:
 
 User-ID (unique identifier for each user)
 
@@ -93,11 +93,11 @@ Insights: Over 168,000 users have provided their age, but approximately 110,232 
 
 Total entries: 1,149,780
 
-Columns:
+Here are the columns Ratings have:
 
-User-ID
+User-ID (unique identifier for each user)
 
-ISBN
+ISBN (unique identifier for each book)
 
 Rating (user’s rating for a book)
 
