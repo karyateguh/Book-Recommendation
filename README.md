@@ -193,7 +193,7 @@ Ratings include both ISBN (to identify books) and User-ID (to identify users).
 By filtering the ratings dataset to include only entries where the ISBN exists in the Books dataset and the User-ID exists in the Users dataset, we ensure that all references in the ratings data are valid.
 For instance, if a rating references a book no longer present in the books dataset, that rating becomes meaningless. Ensuring consistency between datasets is a standard practice to avoid orphan records and maintain relational integrity . 
 
-# 3. Dropping Duplicates Again in Ratings
+## 3. Dropping Duplicates Again in Ratings
 
 Although duplicates based on User-ID and ISBN were already addressed, performing a final drop_duplicates operation ensures no stray duplicates exist due to prior operations or merging inconsistencies. This final check ensures a pristine dataset, free of redundancy.
 
